@@ -1,5 +1,10 @@
 
-var Game = new Phaser.Game(480, 360, Phaser.CANVAS, 'canvas_game',{ preload: preload, create: create, update: update,render: render});
+var weight_CANVAS=480;
+var height_CANVAS=360;
+
+
+
+var Game = new Phaser.Game(weight_CANVAS*2, height_CANVAS*2, Phaser.CANVAS, 'canvas_game',{ preload: preload, create: create, update: update,render: render});
 
 var player;
 var cursor;
@@ -16,12 +21,16 @@ function create(){
 
 
 	bg= Game.add.tileSprite(0, 0, 480, 1024, 'bg');
-	Game.world.setBounds(0, 0, 480, 1024);
+	Game.world.setBounds(0, 0, 480*2, 1024*2);
+
+    bg.scale.setTo(2, 2);
 
 	Game.physics.startSystem(Phaser.Physics.P2JS);
 
 	player=Game.add.sprite(Game.world.centerX, 0, 'player');
 
+    player.scale.setTo(2,2);
+    
 	Game.physics.p2.enable(player);
 
 	cursors = Game.input.keyboard.createCursorKeys();
