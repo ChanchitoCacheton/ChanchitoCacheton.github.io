@@ -1,6 +1,7 @@
 
-var weight_CANVAS=window.innerWidth;
-var height_CANVAS=window.innerHeight;
+var weight_CANVAS=window.innerWidth*window.devicePixelRatio;
+var height_CANVAS=window.innerHeight*window.devicePixelRatio;
+
 
 
 
@@ -21,7 +22,7 @@ function create(){
 
 
 	bg= Game.add.tileSprite(0, 0, weight_CANVAS, height_CANVAS, 'bg');
-    Game.world.setBounds(0, 0, weight_CANVAS, 1900);
+    Game.world.setBounds(0, 0, 480, 1024);
 
     bg.scale.setTo(3,2);
 
@@ -29,7 +30,7 @@ function create(){
 
 	player=Game.add.sprite(Game.world.centerX, 0, 'player');
 
-    player.scale.setTo(1,1);
+    player.scale.setTo(2,2);
     
 	Game.physics.p2.enable(player);
 
