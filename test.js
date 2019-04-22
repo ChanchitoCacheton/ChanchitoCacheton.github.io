@@ -1,10 +1,10 @@
 
-var weight_CANVAS=480;
-var height_CANVAS=360;
+var weight_CANVAS=window.innerWidth;
+var height_CANVAS=window.innerHeight;
 
 
 
-var Game = new Phaser.Game(weight_CANVAS*2, height_CANVAS*2, Phaser.CANVAS, 'canvas_game',{ preload: preload, create: create, update: update,render: render});
+var Game = new Phaser.Game(weight_CANVAS, height_CANVAS, Phaser.CANVAS, 'canvas_game',{ preload: preload, create: create, update: update,render: render});
 
 var player;
 var cursor;
@@ -20,16 +20,16 @@ function preload(){
 function create(){
 
 
-	bg= Game.add.tileSprite(0, 0, 480, 1024, 'bg');
-	Game.world.setBounds(0, 0, 480*2, 1024*2);
+	bg= Game.add.tileSprite(0, 0, weight_CANVAS, height_CANVAS, 'bg');
+    Game.world.setBounds(0, 0, weight_CANVAS, 1900);
 
-    bg.scale.setTo(2, 2);
+    bg.scale.setTo(3,2);
 
 	Game.physics.startSystem(Phaser.Physics.P2JS);
 
 	player=Game.add.sprite(Game.world.centerX, 0, 'player');
 
-    player.scale.setTo(2,2);
+    player.scale.setTo(1,1);
     
 	Game.physics.p2.enable(player);
 
