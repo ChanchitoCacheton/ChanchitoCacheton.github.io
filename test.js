@@ -69,8 +69,8 @@ function update(){
 
 function render() {
 
-    Game.debug.cameraInfo(Game.camera, 23, 40);
-    Game.debug.spriteCoords(player, 32, 200);
+    //Game.debug.cameraInfo(Game.camera, 23, 40);
+    //Game.debug.spriteCoords(player, 32, 200);
 
 
 
